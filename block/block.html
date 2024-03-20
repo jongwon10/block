@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Tower</title>
+    <link rel="stylesheet" href="block.css">
+    <script src="https://codepen.io/steveg3003/pen/zBVakw"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+</head>
+<body>
+    <div id="container">
+        <div id="game"></div>
+        <div id="score">0</div>
+        <div id="bestscore">0</div>
+        <!-- <div id="instructions">Click (or press the spacebar) to place the block</div> -->
+        <div class="game-over">
+            <h2>Game Over</h2>
+            <p>You did great, you're the best.</p>
+            <p>Click or spacebar to start again</p>
+        </div>
+        <div class="game-ready">
+            <div id="start-button">START</div>
+            <div id="nPopup">
+                <div id="nPopup-content">
+                    <h1>How To</h1>
+                    <p>- 화면이 전환되면 또 한 번의 마우스 클릭으로 게임을 시작한다.</p>
+                    <p>- 좌 / 우에서 날아오는 블록을 기존 블록에 정확히 안착 시킨다.</p>
+                    <p>- 정확하지 않은 나머지 면적의 블록은 제거되며, 크기 또한 작아진다.</p>
+                    <p>- 작아진 블록위에 최대한 높이 쌓아 올리는 걸 목적으로 하여 플레이한다.</p>
+                    <p>- 블록에 안착 시키지 못할 경우에는 즉시 GAME OVER된다.</p>
+                    <p>- 게임의 재 진행을 원할 시에는 단축키 ‘R’ 버튼을 클릭한다.</p>
+                    <button id="sBtn"><img src="/img/start.png" alt="시작"></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="block.js"></script>
+</body>
+</html>
