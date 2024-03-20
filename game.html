@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Worm Game</title>
     <link rel="stylesheet" href="game.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="game-container">
-        <h1>지렁이 게임</h1>
+        <h1 id="h1">지렁이 게임</h1>
+        <button id="cBtn"><img src="/img/close1.png" alt="나가기"></button>
         <div id="score">Score: 0</div>
         <div id="bestScore">Best Score: 0</div>
         <button id="sBtn">START</button>
@@ -17,11 +18,13 @@
             <div id="nPopup-content">
                 <h1>How To</h1>
                 <p>- 방향키를 조작하여 랜덤으로 보여지는 ITEM을 먹도록 한다.</p>
+                <p>- ITEM의 종류는 나뭇잎과 사과 두가지 이다.</p>
+                <p>  (나뭇잎 : 점수 획득과 지렁이 몸 1칸 생성,</p>
+                <p>   사과 : 점수 변동 없고, 지렁이 몸 2칸 삭제)</p>
                 <p>- 점점 늘어나는 지렁이의 몸과 게임이 진행될수록 속도가 증가하는</p>
                 <p>   지렁이를 control하여 벽과 몸에 부딪히지 않는 걸 목적으로 플레이한다.</p>
                 <p>- 벽과 몸통에 부딪히면 즉시 게임 종료</p>
                 <p>- 게임 종료되는 순간, 현재 게임의 Score와 Best Score를 확인한다.</p>
-                <p></p>
                 <button onclick="startGame()"><img src="/img/start.png" alt="시작"></button>
             </div>
         </div>
@@ -32,7 +35,7 @@
                 <h3 id="best-score"></h3>
                 <div class="btn-container">
                     <button id="rBtn"><img src="/img/reload.png" alt="재시작"></button>
-                    <button id="nBtn"><img src="/img/close.png" alt="다음으로"></button>
+                    <button id="nBtn"><img src="/img/close.png" alt="나가기"></button>
                 </div>
             </div>
         </div>
@@ -47,8 +50,12 @@
                 </div>
             </div>
         </div>
+
         <img id="snakeImg" src="/img/worm.png" style="display: none;">
-        <img id="foodImg" src="/img/acorn.png" style="display: none;">
+        <img id="foodImg" src="/img/leaf.png" style="display: none;">
+        <img id="specialFoodImg" src="/img/apple.png" style="display: none;">
+
+        <audio id="eatSound" src="/media/eat_sound.mp3"></audio>
 
         <canvas id="canvas" width="600" height="600"></canvas>
         <div id="controls">
